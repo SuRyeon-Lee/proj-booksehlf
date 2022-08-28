@@ -1,10 +1,15 @@
 import './App.css';
+import styled  from 'styled-components';
+import GlobalStyle from "./style/GlobalStyle";
 
 function App() {
   return (
-    <div className="App">
-      bookshelf project
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        bookshelf project
+      </div>
+    </>
   );
 }
 
