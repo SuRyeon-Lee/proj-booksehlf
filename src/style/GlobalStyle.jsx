@@ -11,6 +11,11 @@ const GlobalStyle = createGlobalStyle`
         --dark-retro-blue: #00A0A2;
         --midnight-black: #181617;
         --ivory: #EEEAE2;
+        --symbol_first-bar: var(--cherry-red);
+        --symbol_second-bar: var(--retro-blue);
+        --symbol_third-bar: var(--muted-orange);
+
+        --gutter: 20px;
     }
 `
 export default GlobalStyle
