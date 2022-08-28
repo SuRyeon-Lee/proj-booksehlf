@@ -44,7 +44,7 @@ const Button = styled.li`
     cursor: pointer;
     transition: 0.3 ease-in-out;
     &.showIfDefault:hover {
-        transform: rotate(-10deg);
+        transform: rotate(-6deg);
     };
 `
 
