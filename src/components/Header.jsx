@@ -1,18 +1,35 @@
+import { useState } from 'react';
 import styled  from 'styled-components';
 import addIcon from '../images/add-book-icon.svg';
 import searchIcon from '../images/search-icon.svg';
 import Symbol from './Symbol'
 
 const Header = ()=>{
+    const [headerMode,setHeaderMode] = useState('normal')
+    const handleNormalHeader = () => {
+        setHeaderMode('dark')
+    }
+    const handleDarkHeader = () => {
+        setHeaderMode('normal')
+    }
+
     return (
         <>
-            <Container>
-                <ButtonGroup>
-                    <Button className="showIfDefault"><img  src={addIcon} alt='add book'/></Button>
-                    <Button className="showIfDefault"><img src={searchIcon} alt='search book'/></Button>
-                    <Button className="showIfDark"><Symbol/></Button>
-                </ButtonGroup>
-            </Container>
+            {headerMode === 'normal' ?
+                <Container>
+                    <ButtonGroup>
+                        <Button className="showIfDefault" onClick={handleNormalHeader}><img src={addIcon} alt='add book'/></Button>
+                        <Button className="showIfDefault"><img src={searchIcon} alt='search book'/></Button>
+                    </ButtonGroup>
+                </Container>
+                :
+                <Container dark>
+                    <ButtonGroup>
+                        <Button className="showIfDark" onClick={handleDarkHeader}><Symbol/></Button>
+                    </ButtonGroup>
+                </Container>
+            }
+            
         </>
     )
 }
@@ -25,12 +42,6 @@ const Container = styled.header`
     width: 100%;
     height: 60px;
     padding: 0 var(--gutter);
-    & li.showIfDefault{
-        ${props => props.dark ? "display: none" : "display: block" }
-    }
-    & li.showIfDark{
-        ${props => props.dark ? "display: block" : "display: none" }
-    }
 `;
 const ButtonGroup = styled.ul`
     display: flex;
