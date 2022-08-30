@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {Link} from "react-router-dom"
 import styled  from 'styled-components';
 import addIcon from '../images/add-book-icon.svg';
 import searchIcon from '../images/search-icon.svg';
@@ -18,14 +19,22 @@ const Header = ()=>{
             {headerMode === 'normal' ?
                 <Container>
                     <ButtonGroup>
-                        <Button className="showIfDefault" onClick={handleNormalHeader}><img src={addIcon} alt='add book'/></Button>
+                        <Link to="/addbook">
+                            <Button className="showIfDefault" onClick={handleNormalHeader}>
+                                <img src={addIcon} alt='add book'/>
+                            </Button>
+                        </Link>
                         <Button className="showIfDefault"><img src={searchIcon} alt='search book'/></Button>
                     </ButtonGroup>
                 </Container>
                 :
                 <Container dark>
                     <ButtonGroup>
-                        <Button className="showIfDark" onClick={handleDarkHeader}><Symbol/></Button>
+                        <Link to="/">
+                            <Button className="showIfDark" onClick={handleDarkHeader}>
+                                <Symbol/>
+                            </Button>
+                        </Link>
                     </ButtonGroup>
                 </Container>
             }
