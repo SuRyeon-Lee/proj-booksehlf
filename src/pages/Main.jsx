@@ -23,7 +23,7 @@ const Main = ()=>{
 
 const Container = styled.main`
     width: 100%;
-    min-height: 100vh;
+    min-height: 150vh;
     background-color: var(--ivory);
 `
 
@@ -34,7 +34,6 @@ const Shelf = styled.div`
     gap:10px;
     width: 100%;
     height: 390px;
-    border-bottom: 2px solid var(--midnight-black)
 `
 
 export default Main;
