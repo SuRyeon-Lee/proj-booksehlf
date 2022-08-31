@@ -16,6 +16,8 @@ const GlobalStyle = createGlobalStyle`
         --symbol_third-bar: var(--muted-orange);
 
         --gutter: 20px;
+        --min-book-thickness:60px
+        --max-book-thickness:120px
     }
 `
 export default GlobalStyle
